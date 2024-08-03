@@ -91,6 +91,7 @@ int main(void)
   cudaDeviceProp prop;
   cudaGetDeviceProperties(&prop, 0);
   int max_threads_num = prop.maxThreadsPerBlock;
+  max_threads_num = int(pow(2, int(log2(max_threads_num))))
   while(true){
     int N = 0;
     int real_size = 0;
